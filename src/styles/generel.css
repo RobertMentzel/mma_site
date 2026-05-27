@@ -1,0 +1,163 @@
+/*************** RESET *********************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*************** VARIABLES *********************/
+:root {
+  /* COLORS */
+  --clr-bg: #451708;
+  --clr-bg-light: #7A3525;
+
+  --clr-text: #FFFBF6;
+  --clr-text-muted: #b3b3b3;
+
+  --clr-primary: #EF690A;
+  --clr-accent: #CB4023;
+
+  --clr-border: #000000;
+
+  /* TYPOGRAPHY */
+  --font-heading: "Anton", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+
+  /* FONT SIZES */
+  --fs-display: 5rem;
+  --fs-h1: 3.5rem;
+  --fs-h2: 2.5rem;
+  --fs-h3: 1.75rem;
+  --fs-body: 1.125rem;
+  --fs-small: 0.875rem;
+
+  /* SPACING */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* BORDER RADIUS */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+
+  /* SHADOWS */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
+
+  /* CONTAINER */
+  --container-width: 1200px;
+}
+
+/*************** BASE TYPOGRAPHY *********************/
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  color: var(--clr-text-muted);
+}
+
+/*************** LAYOUT *********************/
+.container {
+  width: min(100% - 2rem, var(--container-width));
+  margin-inline: auto;
+}
+
+section {
+  padding-block: var(--space-xl);
+}
+
+/*************** BUTTONS *********************/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 2rem;
+
+  background: var(--clr-primary);
+  color: white;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  text-decoration: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--clr-text);
+  transform: translateY(-2px);
+}
+
+/*************** UTILITIES *********************/
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
