@@ -28,6 +28,8 @@ html {
 }
 
 body {
+display: flex;
+  flex-direction: column;
   min-height: 100vh;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -44,6 +46,7 @@ body {
   --clr-text-muted: #b3b3b3;
 
   --clr-primary: #EF690A;
+  --clr-primary-rgb: 239, 105, 10;
   --clr-accent: #CB4023;
 
   --clr-border: #000000;

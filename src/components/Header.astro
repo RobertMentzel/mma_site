@@ -1,0 +1,228 @@
+---
+// src/components/Header.astro
+
+const navLinks = [
+  { name: "Om os", href: "/om_os" },
+  { name: "Kontakt", href: "/kontakt" },
+  { name: "Bliv medlem", href: "/bliv_medlem" },
+  { name: "Skema", href: "/skema" },
+];
+---
+
+<header class="site-header">
+
+  <div class="container header-wrapper">
+
+    <!-- LOGO -->
+    <a href="/" class="logo">
+      <img src="/logo_mand.svg" alt="RUMBLE">
+    </a>
+
+    <!-- BURGER -->
+    <button class="burger-btn" id="burger-btn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- MOBILE NAV -->
+    <nav class="mobile-nav" id="mobile-nav">
+      {
+        navLinks.map((link) => (
+          <a href={link.href}>{link.name}</a>
+        ))
+      }
+    </nav>
+
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+
+      <div class="nav-side">
+        <a href={navLinks[0].href}>{navLinks[0].name}</a>
+        <a href={navLinks[1].href}>{navLinks[1].name}</a>
+      </div>
+
+      <div class="nav-side">
+        <a href={navLinks[2].href}>{navLinks[2].name}</a>
+        <a href={navLinks[3].href}>{navLinks[3].name}</a>
+      </div>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<script>
+  const burgerBtn = document.getElementById("burger-btn");
+  const mobileNav = document.getElementById("mobile-nav");
+
+  if (burgerBtn && mobileNav) {
+
+    burgerBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+    });
+
+  }
+</script>
+
+<style>
+  .site-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background-color: rgba(var(--clr-primary-rgb), 0.76);
+
+    backdrop-filter: blur(10px);
+  }
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 120px;
+
+    position: relative;
+  }
+
+  /* LOGO */
+  .logo {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1001;
+  }
+
+  .logo img {
+    height: 80px;
+    width: auto;
+  }
+
+  /* BURGER */
+  .burger-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 1001;
+  }
+
+  .burger-btn span {
+    width: 2rem;
+    height: 3px;
+
+    background-color: var(--clr-text);
+
+    border-radius: 999px;
+  }
+
+  /* MOBILE NAV */
+  .mobile-nav {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background-color: var(--clr-bg-light);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+
+    gap: 1.5rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+  }
+
+  .mobile-nav.active {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  .mobile-nav a {
+    color: var(--clr-text);
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  /* DESKTOP NAV */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+
+    .logo img {
+      height: 120px;
+    }
+
+    .burger-btn {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .desktop-nav {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-side {
+      display: flex;
+
+      gap: 2rem;
+    }
+
+    .desktop-nav a {
+      text-decoration: none;
+
+      color: var(--clr-text);
+
+      font-weight: 600;
+
+      transition: 0.3s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--clr-accent);
+    }
+  }
+</style>

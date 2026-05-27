@@ -2,11 +2,682 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/generel.css';
+import Cta from "../components/Cta.astro";
+import Header from "../components/Header.astro";
+import Marquee from '../components/Marquee.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<main><h1>DIN VEJ TIL SUCCES</h1></main>
+	
+	<main><section class="hero">
+
+  <!-- MOBILE VIDEO -->
+  <video
+    class="hero-video mobile-video"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="mobil_hero.mov" type="video/mp4" />
+  </video>
+
+  <!-- DESKTOP VIDEO -->
+  <video
+    class="hero-video desktop-video"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="/desktop_hero.mov" type="video/mp4" />
+  </video>
+
+  <!-- OVERLAY -->
+  <div class="hero-overlay"></div>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content container">
+
+    <h1>
+      DIN VEJ TIL SUCCES
+    </h1>
+
+    <p>
+      MMA, Kickboxing & Brazilian Jiu-Jitsu for all levels.
+    </p>
+
+    <Cta
+      href="/medlem"
+      text="Tilmeld"
+    />
+
+  </div>
+
+</section>
+<Marquee />
+	<section class="cta-grid-section">
+
+  <div class="container cta-grid">
+
+    <!-- CARD 1 -->
+    <a href="/mma" class="cta-card">
+
+      <img src="/everyone_smiley_ENHANCED.png" alt="MMA Training">
+
+      <div class="cta-overlay">
+        <h2>Tilmeld</h2>
+      </div>
+
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="/bjj" class="cta-card">
+
+      <img src="/rolig_enhanced.png" alt="BJJ Training">
+
+      <div class="cta-overlay">
+        <h2>Om os</h2>
+      </div>
+
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="/kickboxing" class="cta-card">
+
+      <img src="/red_smile_enhanced.png" alt="Kickboxing Training">
+
+      <div class="cta-overlay">
+        <h2>Kontakt</h2>
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+	<section class="trial-section">
+
+  <div class="container">
+
+    <div class="trial-box">
+
+      <h2>
+        Prøvetræning
+      </h2>
+
+      <p>
+        Man er meget velkommen til at tage en ven eller et familiemedlem med til en gratis prøvetræning. Man kan også komme alene, hvis man hellere har lyst til det.
+      </p>
+
+      <p>
+        Check vores skema for træningstider, eller kontakt os direkte om prøvetræning.
+      </p>
+
+      <div class="trial-cta-wrapper">
+
+        <Cta
+          href="/skema"
+          text="Se Skema"
+        />
+
+        <Cta
+          href="/kontakt"
+          text="Kontakt Os"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="reviews-section">
+
+  <div class="container">
+
+    <div class="reviews-header">
+      <h2>Anmeldelser</h2>
+
+      <!-- DESKTOP ARROWS -->
+      <div class="reviews-controls">
+
+        <button class="review-btn" id="prevBtn">
+          ←
+        </button>
+
+        <button class="review-btn" id="nextBtn">
+          →
+        </button>
+
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="reviews-carousel" id="reviewsCarousel">
+
+      <img src="/dansk_anmeldelse.png" alt="Review">
+      <img src="/engelsk_anmeldelse.png" alt="Review">
+      <img src="/dansk_anmeldelse.png" alt="Review">
+      <img src="/engelsk_anmeldelse.png" alt="Review">
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  const carousel = document.getElementById("reviewsCarousel");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (carousel && prevBtn && nextBtn) {
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: -carousel.clientWidth,
+        behavior: "smooth"
+      });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: carousel.clientWidth,
+        behavior: "smooth"
+      });
+    });
+
+  }
+</script>
+	<section class="motivation-section">
+
+  <div class="container">
+
+    <!-- TITLE -->
+    <h2 class="motivation-title">
+      Vi hjælper dig!
+    </h2>
+
+    <!-- GRID -->
+    <div class="motivation-grid">
+
+      <!-- ITEM 1 -->
+      <div class="motivation-card">
+
+        <img src="/step1.svg" alt="Fællesskab">
+
+        <p>
+          Bliv en del af et stærkt fællesskab, hvor alle hjælper hinanden med at udvikle sig.
+        </p>
+
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="motivation-card">
+
+        <img src="/step2.svg" alt="Selvudvikling">
+
+        <p>
+          Uanset dit niveau hjælper vores trænere dig med at blive stærkere fysisk og mentalt.
+        </p>
+
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="motivation-card">
+
+        <img src="/step3.svg" alt="Kampsport">
+
+        <p>
+          Træn MMA, BJJ og kickboxing i et motiverende miljø med plads til alle.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="motivation-cta">
+
+      <Cta
+        href="/kontakt"
+        text="Start Din Rejse"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+<!-- <Cta
+  href="/om_os"
+  text="Kontakt"
+/><Cta
+  href="/medlem"
+  text="Skema"
+/> -->
+</main> 
 </Layout>
+<style>
+  .hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* VIDEO */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+  }
+
+  /* MOBILE FIRST */
+  .desktop-video {
+    display: none;
+  }
+
+  .mobile-video {
+    display: block;
+  }
+
+  /* OVERLAY */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 2;
+  }
+
+  /* CONTENT */
+  .hero-content {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1.5rem;
+  }
+
+  .hero-content h1 {
+    color: var(--clr-text);
+
+    font-size: clamp(3rem, 12vw, 7rem);
+
+    line-height: 0.9;
+
+    text-transform: uppercase;
+
+    max-width: 10ch;
+  }
+
+  .hero-content p {
+    color: var(--clr-text);
+
+    max-width: 30ch;
+
+    font-size: 1.1rem;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+
+    .desktop-video {
+      display: block;
+    }
+
+    .mobile-video {
+      display: none;
+    }
+  }
+
+  /* .marquee-section {
+  overflow: hidden;
+
+  
+
+  padding-block: 0rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-track img {
+  width: auto;
+
+  height: auto;
+
+  max-height: 100%;
+
+  flex-shrink: 0;
+}
+@media (max-width: 767px) {
+
+  .marquee-track img {
+    height: 100px;
+  }
+
+}
+
+/* ANIMATION */
+.cta-grid-section {
+    padding-block: var(--space-xl);
+  }
+
+  .cta-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  /* CARD */
+  .cta-card {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: var(--radius-md);
+
+    text-decoration: none;
+  }
+
+  /* IMAGE */
+  .cta-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+  }
+
+  /* OVERLAY */
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 1rem;
+  }
+
+  .cta-overlay h2 {
+    color: var(--clr-text);
+
+    font-size: 2rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+  }
+
+  /* DESKTOP HOVER EFFECT */
+  @media (min-width: 768px) {
+
+    .cta-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-overlay {
+      opacity: 0;
+
+      transition: opacity 0.4s ease;
+    }
+
+    .cta-card:hover .cta-overlay {
+      opacity: 1;
+    }
+
+    .cta-card:hover img {
+      transform: scale(1.08);
+    }
+  }
+
+  .trial-section {
+    padding-block: var(--space-xl);
+  }
+
+  .trial-box {
+    background-color: var(--clr-bg-light);
+
+    border-radius: var(--radius-lg);
+
+    padding: 3rem 2rem;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1.5rem;
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .trial-box h2 {
+    color: var(--clr-text);
+
+    text-transform: uppercase;
+  }
+
+  .trial-box p {
+    max-width: 55ch;
+
+    color: var(--clr-text-muted);
+  }
+
+  .trial-cta-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+  }
+
+  /* DESKTOP */
+ 
+  .reviews-section {
+    padding-block: var(--space-xl);
+  }
+
+  .reviews-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+  }
+
+  .reviews-header h2 {
+    color: var(--clr-text);
+
+    text-transform: uppercase;
+  }
+
+  /* CONTROLS */
+  .reviews-controls {
+    display: none;
+
+    gap: 1rem;
+  }
+
+  .review-btn {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 999px;
+
+    background-color: var(--clr-accent);
+    color: var(--clr-text);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+  }
+
+  .review-btn:hover {
+    background-color: var(--clr-text);
+    color: var(--clr-accent);
+
+    transform: translateY(-2px);
+  }
+
+  /* CAROUSEL */
+  .reviews-carousel {
+    display: flex;
+
+    gap: 1.5rem;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+	scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+  }
+
+  .reviews-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-carousel img {
+	min-width: 100%;
+     width: 100%;
+
+  flex-shrink: 0;
+
+  scroll-snap-align: center;
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+
+    .reviews-controls {
+      display: flex;
+    }
+
+    .reviews-carousel img {
+      width: 380px;
+    }
+  }
+    .motivation-section {
+    padding-block: var(--space-xl);
+  }
+
+  .motivation-title {
+    text-align: center;
+
+    margin-bottom: 4rem;
+
+    color: var(--clr-text);
+
+    text-transform: uppercase;
+  }
+
+  /* GRID */
+  .motivation-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  /* CARD */
+  .motivation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1.5rem;
+  }
+
+  .motivation-card img {
+    width: 100%;
+    max-width: 220px;
+
+    height: auto;
+
+    object-fit: contain;
+  }
+
+  .motivation-card p {
+    max-width: 28ch;
+
+    color: var(--clr-text-muted);
+  }
+
+  /* CTA */
+  .motivation-cta {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 4rem;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+
+    .motivation-grid {
+      grid-template-columns: repeat(3, 1fr);
+
+      align-items: start;
+    }
+
+    .motivation-card img {
+      max-width: 260px;
+    }
+  }
+</style>

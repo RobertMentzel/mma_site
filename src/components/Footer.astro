@@ -1,0 +1,123 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <!-- INFO -->
+    <div class="footer-info">
+      <h3>Rumble Sports</h3>
+
+      <p>Flintholm St.</p>
+      <p>Copenhagen, Denmark</p>
+      <p>+45 12 34 56 78</p>
+      <p>contact@rumblesports.dk</p>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="footer-nav">
+      <h3>Navigation</h3>
+
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/classes">Classes</a>
+      <a href="/membership">Membership</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- LOGO -->
+    <div class="footer-logo">
+      <img src="/logo_mand.svg" alt="Rumble Sports Logo">
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--clr-primary);
+
+    padding-block: 4rem;
+
+    color: var(--clr-text);
+
+    margin-top: auto;
+  }
+
+  /* MOBILE FIRST */
+  .footer-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+    text-align: center;
+  }
+
+  .footer-info,
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.75rem;
+  }
+
+  .footer-info h3,
+  .footer-nav h3 {
+    margin-bottom: 0.5rem;
+
+    color: var(--clr-text);
+
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+  }
+
+  .footer-info p,
+  .footer-nav a {
+    color: var(--clr-text-muted);
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+    overflow-wrap: break-word;
+  }
+
+  .footer-nav a:hover {
+    color: var(--clr-text);
+  }
+
+  /* LOGO */
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-logo img {
+    width: 100%;
+    max-width: 90px;
+    height: auto;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+
+    .footer-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      align-items: start;
+
+      text-align: left;
+    }
+
+    .footer-logo {
+      justify-content: flex-end;
+    }
+
+    .footer-logo img {
+      max-width: 120px;
+    }
+  }
+</style>
