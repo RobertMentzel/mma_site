@@ -2,6 +2,7 @@
 
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
+const { pageClass = "" } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +19,12 @@ import Header from "../components/Header.astro"
 		<title>Astro Basics</title>
 	</head>
 	<Header />
-	<body>
+	<body class={pageClass}>
+			  <div class="page-bg">
+
+    <img src="/forside_bg.svg" alt="">
+
+  </div>
 		<slot />
 	</body>
 	<Footer />

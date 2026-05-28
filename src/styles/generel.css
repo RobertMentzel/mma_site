@@ -91,6 +91,7 @@ body {
   font-size: var(--fs-body);
 }
 
+
 h1,
 h2,
 h3,
@@ -163,4 +164,45 @@ section {
 
 .grid {
   display: grid;
+}
+
+/* MOBILE FIRST */
+
+
+/* DESKTOP */
+/* .home-page {
+  background-image: url("/forside_bg.svg");
+
+  background-repeat: no-repeat;
+
+  background-size: 100% 100%;
+
+  background-position: top center;
+}
+
+.about-page {
+  background-image: url("/bg-about.svg");
+
+  background-repeat: repeat-y;
+
+  background-size: 100% auto;
+
+  background-position: top center;
+} */
+ .page-bg {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+}
+
+.page-bg img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }
