@@ -1,0 +1,1332 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/generel.css';
+import Cta from "../components/Cta.astro";
+import Header from "../components/Header.astro";
+import Marquee from '../components/Marquee.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Om os">
+  
+  <main>
+   <section class="page-hero">
+
+  <!-- BACKGROUND IMAGE -->
+  <img
+    class="page-hero-bg"
+    src="/parry_enhanced.png"
+    alt=""
+  >
+
+  <!-- OVERLAY -->
+  <div class="page-hero-overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="page-hero-content container">
+
+    <h1>
+      Om os
+    </h1>
+
+    <p>
+      Vi er et af Danmarks største MMA klubber. Vi er placeret på Flintholm station.Vi tilbyder både BJJ, Kick-boxing og MMA træning. Det er optimalt for dig som gerne enten vil lære selvforsvar, få god motion eller blive rigtig dygtig og delatge i konkurrencer.
+    </p>
+
+  </div>
+  </section>
+  <Marquee/>
+<section class="instructors-section">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="instructors-header">
+
+      <h2>Instruktører</h2>
+
+      <!-- DESKTOP CONTROLS -->
+
+
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="instructors-carousel" id="instructorsCarousel">
+
+      <!-- CARD 1 -->
+      <div class="instructor-card">
+
+        <img src="/franck.webp" alt="Franck Hedehøj">
+
+        <div class="instructor-label">
+          <p>Franck Hedehøj</p>
+          <p>BJJ</p>
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="instructor-card">
+
+        <img src="/yahya.webp" alt="Coach">
+
+        <div class="instructor-label">
+          <p>Marcus Jensen</p>
+          <p>MMA</p>
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="instructor-card">
+
+        <img src="/devin.webp" alt="Coach">
+
+        <div class="instructor-label">
+          <p>Ali Hassan</p>
+          <p>Kickboxing</p>
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="instructor-card">
+
+        <img src="/valentin.webp" alt="Coach">
+
+        <div class="instructor-label">
+          <p>Jonas Nielsen</p>
+          <p>BJJ</p>
+        </div>
+
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="instructor-card">
+
+        <img src="/martin.webp" alt="Coach">
+
+        <div class="instructor-label">
+          <p>Emil Larsen</p>
+          <p>MMA</p>
+        </div>
+
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="instructor-card">
+
+        <img src="/thea.webp" alt="Coach">
+
+        <div class="instructor-label">
+          <p>Oliver Madsen</p>
+          <p>Kickboxing</p>
+        </div>
+
+      </div>
+
+    </div>
+          <div class="instructors-controls">
+
+        <button class="instructor-btn" id="prevInstructor">
+          ←
+        </button>
+
+        <button class="instructor-btn" id="nextInstructor">
+          →
+        </button>
+
+      </div>
+
+  </div>
+
+</section>
+
+<script>
+  const instructorCarousel = document.getElementById("instructorsCarousel");
+  const prevInstructor = document.getElementById("prevInstructor");
+  const nextInstructor = document.getElementById("nextInstructor");
+
+  if (instructorCarousel && prevInstructor && nextInstructor) {
+
+    prevInstructor.addEventListener("click", () => {
+      instructorCarousel.scrollBy({
+        left: -400,
+        behavior: "smooth"
+      });
+    });
+
+    nextInstructor.addEventListener("click", () => {
+      instructorCarousel.scrollBy({
+        left: 400,
+        behavior: "smooth"
+      });
+    });
+
+  }
+</script>
+  <section class="about-section">
+
+  <div class="container about-grid">
+
+    <!-- VIDEO -->
+
+
+    <!-- CONTENT -->
+    <div class="about-content">
+
+      <h2>Om os</h2>
+
+      <p>
+        Rumble Sports er et kampsportscenter ved Flintholm St., hvor fællesskab, disciplin og personlig udvikling er i fokus. Vi tilbyder træning i MMA, kickboxing og Brasiliansk Jiu-Jitsu for både begyndere, motionister og ambitiøse kæmpere.
+      </p>
+
+      <p>
+        Hos os er alle velkomne – uanset erfaring og mål. Vores erfarne trænere skaber et motiverende og trygt træningsmiljø, hvor du kan udvikle dig fysisk og mentalt i dit eget tempo.
+      </p>
+
+      <p>
+        Uanset om du ønsker bedre form, selvforsvar eller drømmer om konkurrencer, er målet at give dig den bedst mulige oplevelse og gøre dig til en del af et stærkt fællesskab.
+      </p>
+
+      <!-- CTA -->
+      <div class="about-cta">
+
+        <Cta
+          href="/bliv_medlem"
+          text="Bliv Medlem"
+        />
+
+      </div>
+
+    </div>
+    <div class="about-video-wrapper">
+
+      <button class="about-video-btn" id="openAboutVideo">
+
+        <img
+          src="/om_os_video_thumbnail.jpg"
+          alt="Rumble Sports Video"
+          class="about-video-thumbnail"
+        >
+
+        <div class="play-button">
+          ▶
+        </div>
+
+      </button>
+
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="about-modal" id="aboutModal">
+
+    <button class="close-about-modal" id="closeAboutVideo">
+      ✕
+    </button>
+
+    <video
+      controls
+      class="about-modal-video"
+      id="aboutVideo"
+    >
+      <source src="/stor_video_til_om_os.mov" type="video/mp4">
+    </video>
+
+  </div>
+
+</section>
+
+<script>
+  const openAboutVideo = document.getElementById("openAboutVideo");
+  const closeAboutVideo = document.getElementById("closeAboutVideo");
+  const aboutModal = document.getElementById("aboutModal");
+ const aboutVideo = document.getElementById("aboutVideo") as HTMLVideoElement;
+
+  if (
+    openAboutVideo &&
+    closeAboutVideo &&
+    aboutModal &&
+    aboutVideo
+  ) {
+
+    openAboutVideo.addEventListener("click", () => {
+
+      aboutModal.classList.add("active");
+
+      aboutVideo.play();
+
+    });
+
+    closeAboutVideo.addEventListener("click", () => {
+
+      aboutModal.classList.remove("active");
+
+      aboutVideo.pause();
+
+      aboutVideo.currentTime = 0;
+
+    });
+
+    aboutModal.addEventListener("click", (event) => {
+
+      if (event.target === aboutModal) {
+
+        aboutModal.classList.remove("active");
+
+        aboutVideo.pause();
+
+        aboutVideo.currentTime = 0;
+
+      }
+
+    });
+
+  }
+</script>
+<section class="federations-section">
+
+  <div class="container">
+
+    <!-- TITLE -->
+    <h2 class="federations-title">
+      Forbund
+    </h2>
+
+    <!-- GRID -->
+    <div class="federations-grid">
+
+      <!-- FEDERATION 1 -->
+      <div class="federation-card">
+
+        <img
+          src="/WKO.jpg"
+          alt="Forbund Logo"
+        >
+
+        <p>
+          Rumble Sports er medlem af WKO Denmark.
+        </p>
+
+        <a
+          href="https://www.facebook.com/WKODenmark"
+          target="_blank"
+          class="federation-link"
+        >
+          Besøg hjemmeside
+        </a>
+
+      </div>
+
+      <!-- FEDERATION 2 -->
+      <div class="federation-card">
+
+        <img
+          src="/dmmaf.jpg"
+          alt="Forbund Logo"
+        >
+
+        <p>
+          Rumble Sports er medlem af DMMAF.
+        </p>
+
+        <a
+          href="http://www.dmmaf.dk/"
+          target="_blank"
+          class="federation-link"
+        >
+          Besøg hjemmeside
+        </a>
+
+      </div>
+
+      <!-- FEDERATION 3 -->
+      <div class="federation-card">
+
+        <img
+          src="/dkmf.jpg"
+          alt="Forbund Logo"
+        >
+
+        <p>
+          Rumble Sports er medlem af DMMAF.
+        </p>
+
+        <a
+          href="http://www.dmmaf.dk/"
+          target="_blank"
+          class="federation-link"
+        >
+          Besøg hjemmeside
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="history-section">
+
+  <div class="container">
+
+    <!-- HISTORY INTRO -->
+    <div class="history-intro">
+
+      <h2>Historie</h2>
+<img
+        src="/choke.jpg"
+        alt="Original Choke Logo"
+        class="history-logo"
+      >
+      <p>
+        Choke Brasiliansk Jiu-Jitsu blev grundlagt i 2004. Vi er den mest traditionelle BJJ organisation i Danmark og den eneste klub der er direkte forbundet til Gracie familien i Brazilien og USA. Når Gracie familien kommer til Scandinavien træner de som regel hos os.
+      </p>
+
+      <p>
+        Vi har 2 skoler, København og Aarhus med over 700 medlemmer.
+      </p>
+
+      <p>
+        Vores grundlægger og hovedinstruktør er Joao Pedro Santos, der er tredje grad sort bælte under ottendegrads Carlson Gracie discipel Sergio "Bolao" Souza.
+      </p>
+
+      <p>
+        Navnet Choke er kort, stærkt og relatere direkte til Brasiliansk Jiu-Jitsu. Ifølge Stormester Helio Gracie, er det også det stærkeste move i Jiu-Jitsu.
+      </p>
+
+      <p>
+        Vores logo er baseret på det traditionelle Gracie Academy logo der er blevet brugt i Brasilien i næsten 100 år.
+      </p>
+
+      <!-- OG LOGO -->
+      
+
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline-wrapper">
+
+      <h2>Tidslinje</h2>
+
+      <div class="timeline-grid">
+
+        <!-- LEFT -->
+        <div class="timeline-content">
+
+          <p><strong>2003</strong> - Første seminar bliver afholdt i Helsingør.</p>
+
+          <p><strong>2004</strong> - Lille træningsgruppe skabt i Hillerød.</p>
+
+          <p><strong>2004</strong> - Gruppen flytter til Lyngby og bliver officielt kendt som Choke Brazilian Jiu-Jitsu.</p>
+
+          <p><strong>2005</strong> - Roger og Igor Gracie besøger Skandinavien.</p>
+
+          <p><strong>2006</strong> - Choke Aarhus bliver oprettet.</p>
+
+          <p><strong>2006</strong> - Roberto Atalla besøger Danmark.</p>
+
+          <p><strong>2007</strong> - Choke Hvide Sande bliver etableret.</p>
+
+          <p><strong>2007</strong> - Choke Sverige oprettes.</p>
+
+          <p><strong>2007</strong> - Choke Odense åbner.</p>
+
+          <p><strong>2008</strong> - Rolles Gracie underviser hos Choke.</p>
+
+          <p><strong>2008</strong> - Hovedskolen flytter til København.</p>
+
+          <p><strong>2009</strong> - Sergio Souza Bolao besøger Danmark.</p>
+
+          <p><strong>2009</strong> - Kyra Gracie underviser hos Choke.</p>
+
+          <p><strong>2010</strong> - Choke får egen adresse på Nørrebro.</p>
+
+          <p><strong>2010</strong> - Carlson Gracie Jr. underviser hos Choke.</p>
+
+          <p><strong>2011</strong> - Luca Atalla besøger Choke.</p>
+
+          <p><strong>2011</strong> - Hovedskolen flytter til Østerbro.</p>
+
+          <p><strong>2015</strong> - Professor JP flytter tilbage til Rio.</p>
+
+          <p><strong>2015</strong> - Braulio Estima afholder seminar.</p>
+
+          <p><strong>2016</strong> - Professor JP vender tilbage til Danmark.</p>
+
+          <p><strong>2016</strong> - Bernardo Faria afholder seminar.</p>
+
+          <p><strong>2016</strong> - Iran Mascarenhas afholder seminar.</p>
+
+          <p><strong>2016</strong> - Choke og Rumble Sports fusionerer.</p>
+
+        </div>
+
+        <!-- RIGHT IMAGES -->
+        <div class="timeline-images">
+
+          <!-- ROW 1 -->
+          <div class="timeline-image-block">
+
+            <img
+              src="/strike_enhanced.png"
+              alt=""
+            >
+
+          </div>
+
+          <!-- LOGO -->
+          <img
+            src="/logo_mand.svg"
+            alt=""
+            class="floating-logo logo-top"
+          >
+
+          <!-- ROW 2 -->
+          <div class="timeline-image-block">
+
+            <img
+              src="/grapple_close_enhanced.png"
+              alt=""
+            >
+
+          </div>
+
+          <!-- ROW 3 -->
+          <div class="timeline-image-block">
+
+            <img
+              src="/smiley_enhanced.png"
+              alt=""
+            >
+
+          </div>
+
+          <!-- LOGO -->
+          <img
+            src="/logo_kvinde.svg"
+            alt=""
+            class="floating-logo logo-bottom"
+          >
+
+          <!-- ROW 4 -->
+          <div class="timeline-image-block">
+
+            <img
+              src="/grapple_enhanced.png"
+              alt=""
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="contact-section">
+
+  <div class="container contact-grid">
+
+    <!-- CONTACT FORM -->
+    <div id="kontakt" class="contact-box">
+
+      <h2>Kontakt</h2>
+
+      <form class="contact-form">
+
+        <input
+          type="text"
+          placeholder="Navn"
+        >
+
+        <input
+          type="email"
+          placeholder="Email"
+        >
+
+        <input
+          type="tel"
+          placeholder="Telefonnummer"
+        >
+
+        <!-- TOPIC -->
+        <select>
+
+          <option value="">
+            Vælg emne
+          </option>
+
+          <option>
+            Gratis prøvetræning
+          </option>
+
+          <option>
+            Privat undervisning
+          </option>
+
+          <option>
+            Medlemskab
+          </option>
+
+          <option>
+            Hold & skema
+          </option>
+
+          <option>
+            Andet
+          </option>
+
+        </select>
+
+        <!-- MESSAGE -->
+        <textarea
+          placeholder="Besked"
+          rows="6"
+        ></textarea>
+
+      </form>
+
+      <Cta
+        href="#"
+        text="Send"
+      />
+
+    </div>
+
+    <!-- INFORMATION -->
+    <div class="contact-box">
+
+      <h2>Information</h2>
+
+      <div class="contact-info">
+
+        <p>
+          <strong>Adresse:</strong><br>
+          Stig Lommers Pl. 3
+        </p>
+
+        <p>
+          <strong>Tlf:</strong><br>
+          31 55 50 42
+        </p>
+
+        <p>
+          <strong>Mail:</strong><br>
+          Franckrh@icloud.com
+        </p>
+
+        <p>
+          <strong>Åbningstider</strong><br><br>
+
+          Mandag-Torsdag: 16.00-22.00<br><br>
+
+          Fredag: 16.00-20.00<br><br>
+
+          Lørdag: 10.00-14.00<br><br>
+
+          Søndag: 10.00-14.00
+        </p>
+
+      </div>
+
+      <!-- GOOGLE MAPS -->
+      <div class="map-wrapper">
+
+        <iframe
+          src="https://www.google.com/maps?q=Stig+Lommers+Plads+3+Copenhagen&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>
+  <style>
+      .page-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* BACKGROUND IMAGE */
+  .page-hero-bg {
+    position: absolute;
+    
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+object-position: 60% center;
+    z-index: 1;
+  }
+
+  /* OVERLAY */
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0,0,0,0.5);
+
+    z-index: 2;
+  }
+
+  /* CONTENT */
+  .page-hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1.5rem;
+  }
+
+  .page-hero-content h1 {
+    color: var(--clr-text);
+
+    font-size: clamp(3rem, 12vw, 7rem);
+
+    text-transform: uppercase;
+
+    line-height: 0.9;
+  }
+
+  .page-hero-content p {
+    color: var(--clr-text);
+
+    max-width: 60ch;
+  }
+
+
+  .instructors-section {
+    padding-block: var(--space-xl);
+  }
+
+  /* HEADER */
+  .instructors-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2rem;
+  }
+
+  .instructors-header h2 {
+    text-transform: uppercase;
+  }
+
+  /* CONTROLS */
+  .instructors-controls {
+    display: flex;
+  justify-content: center;
+
+    gap: 1rem;
+  }
+
+  .instructor-btn {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 999px;
+
+    background-color: var(--clr-accent);
+
+    color: var(--clr-text);
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+  }
+
+  .instructor-btn:hover {
+    background-color: var(--clr-text);
+
+    color: var(--clr-accent);
+
+    transform: translateY(-2px);
+  }
+
+  /* CAROUSEL */
+  .instructors-carousel {
+    display: flex;
+
+    gap: 1.5rem;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+  }
+
+  .instructors-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* CARD */
+  .instructor-card {
+    position: relative;
+
+    min-width: 100%;
+
+    height: 500px;
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    scroll-snap-align: center;
+
+    flex-shrink: 0;
+  }
+
+  .instructor-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  /* LABEL */
+  .instructor-label {
+    position: absolute;
+
+    left: 1rem;
+    bottom: 1rem;
+
+    background-color: var(--clr-accent);
+
+    padding: 1rem 1.25rem;
+
+    border-radius: var(--radius-md);
+
+    backdrop-filter: blur(6px);
+  }
+
+  .instructor-label h3 {
+    color: var(--clr-text);
+
+    font-size: 1.1rem;
+  }
+
+  .instructor-label p {
+    color: var(--clr-text);
+
+    font-size: 0.95rem;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1024px) {
+
+    .instructors-controls {
+      display: flex;
+    }
+
+    .instructor-card {
+      min-width: calc((100% - 3rem) / 3);
+    }
+  } 
+  .about-section {
+    padding-block: var(--space-xl);
+  }
+
+  /* MOBILE FIRST */
+  .about-grid {
+    display: grid;
+
+    gap: 3rem;
+  }
+
+  /* VIDEO */
+  .about-video-btn {
+    position: relative;
+
+    width: 100%;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-video-thumbnail {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+  }
+
+  .about-video-btn:hover .about-video-thumbnail {
+    transform: scale(1.03);
+  }
+
+  /* PLAY BUTTON */
+  .play-button {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 4rem;
+
+    color: white;
+
+    background-color: rgba(0,0,0,0.35);
+
+    /* backdrop-filter: blur(0px); */
+  }
+
+  /* CONTENT */
+  .about-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+  }
+
+  .about-content h2 {
+    text-transform: uppercase;
+
+    text-align: center;
+  }
+
+  .about-content p {
+    line-height: 1.8;
+  }
+
+  .about-cta {
+    margin-top: 1rem;
+  }
+
+  /* MODAL */
+  .about-modal {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0,0,0,0.9);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s ease;
+
+    z-index: 3000;
+  }
+
+  .about-modal.active {
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+  .about-modal-video {
+    width: 100%;
+    max-width: 1200px;
+
+    max-height: 90vh;
+
+    border-radius: var(--radius-lg);
+  }
+
+  .close-about-modal {
+    position: absolute;
+
+    top: 2rem;
+    right: 2rem;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1024px) {
+
+    .about-grid {
+      grid-template-columns: repeat(2, 1fr);
+
+      align-items: center;
+
+      gap: 4rem;
+    }
+
+    .about-content h2 {
+      text-align: left;
+    }
+  }
+
+  .federations-section {
+    padding-block: var(--space-xl);
+  }
+
+  .federations-title {
+    text-align: center;
+
+    margin-bottom: 4rem;
+
+    text-transform: uppercase;
+  }
+
+  /* GRID */
+  .federations-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  /* CARD */
+  .federation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1.5rem;
+  }
+
+  .federation-card img {
+    width: 100%;
+    max-width: 220px;
+
+    height: auto;
+
+    object-fit: contain;
+  }
+
+  .federation-card p {
+    max-width: 30ch;
+
+    color: var(--clr-text-muted);
+
+    line-height: 1.8;
+  }
+
+  .federation-link {
+    color: var(--clr-text);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+  }
+
+  .federation-link:hover {
+    color: var(--clr-accent);
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+
+    .federations-grid {
+      grid-template-columns: repeat(3, 1fr);
+
+      align-items: start;
+    }
+
+    .federation-card img {
+      max-width: 260px;
+    }
+  }
+  .history-section {
+    padding-block: var(--space-xl);
+  }
+
+  /* INTRO */
+  .history-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 1.5rem;
+
+    margin-bottom: 6rem;
+  }
+
+  .history-intro p {
+    max-width: 75ch;
+
+    line-height: 1.8;
+  }
+
+  .history-logo {
+    width: 100%;
+    max-width: 220px;
+
+    margin-top: 2rem;
+  }
+
+  /* TIMELINE */
+  .timeline-wrapper h2 {
+    text-align: center;
+
+    margin-bottom: 4rem;
+
+    text-transform: uppercase;
+  }
+
+  .timeline-grid {
+    display: grid;
+
+    gap: 4rem;
+  }
+
+  /* TEXT */
+  .timeline-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+  }
+
+  .timeline-content p {
+    line-height: 1.8;
+  }
+
+  /* IMAGES */
+  .timeline-images {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    
+  }
+
+  .timeline-image-block {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .timeline-image-block img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  /* FLOATING LOGOS */
+  .floating-logo {
+    position: absolute;
+
+    width: 180px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+  }
+
+  .logo-top {
+    top: 22%;
+  }
+
+  .logo-bottom {
+    top: 72%;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1024px) {
+
+    .timeline-grid {
+      grid-template-columns: repeat(2, 1fr);
+
+      align-items: start;
+
+      gap: 5rem;
+    }
+
+    .timeline-content {
+      position: sticky;
+
+      top: 8rem;
+    }
+  }
+  .contact-section {
+    padding-block: var(--space-xl);
+  }
+
+  /* GRID */
+  .contact-grid {
+    display: grid;
+
+    gap: 3rem;
+  }
+
+  /* BOX */
+  .contact-box {
+    background-color: var(--clr-bg-light);
+
+    padding: 2rem;
+
+    border-radius: var(--radius-lg);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .contact-box h2 {
+    text-transform: uppercase;
+  }
+
+  /* FORM */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+
+    padding: 1rem;
+
+    border: 2px solid transparent;
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--clr-bg);
+
+    color: var(--clr-text);
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: 0.3s ease;
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+
+    min-height: 160px;
+  }
+
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    border-color: var(--clr-accent);
+  }
+
+  /* INFO */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+  }
+
+  .contact-info p {
+    line-height: 1.8;
+  }
+
+  /* MAP */
+  .map-wrapper {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+  }
+
+  .map-wrapper iframe {
+    width: 100%;
+    height: 350px;
+
+    border: none;
+  }
+
+  /* DESKTOP */
+  @media (min-width: 1024px) {
+
+    .contact-grid {
+      grid-template-columns: repeat(2, 1fr);
+
+      align-items: stretch;
+    }
+
+    .contact-box {
+      padding: 3rem;
+    }
+  }
+  </style>

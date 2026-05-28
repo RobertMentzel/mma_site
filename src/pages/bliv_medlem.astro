@@ -33,12 +33,13 @@ import Marquee from '../components/Marquee.astro';
     </h1>
 
     <p>
-      Start din rejse hos Rumble Sports i dag.
+      Vi har en række af forskellige holdtræninger i form a Kick-boxing, BJJ og MMA. Vi tilbyder også børnehold i trygge rammer for barnet, således at træningen er en blanding af leg og fysisk træning tilpasset til deres alder.
     </p>
 
   </div>
 
 </section>
+<Marquee/>
 <section class="offers-section">
 
   <div class="container offers-grid">
@@ -91,7 +92,7 @@ import Marquee from '../components/Marquee.astro';
     
 
     <!-- CONTENT -->
-    <div class="schedule-content">
+    <div id="skema" class="schedule-content">
 
       <h2>Skema</h2>
 
@@ -123,7 +124,7 @@ import Marquee from '../components/Marquee.astro';
 
       <!-- CTA -->
       <Cta
-        href="/kontakt"
+        href="/om_os#kontakt"
         text="Kontakt"
       />
 
@@ -224,14 +225,14 @@ import Marquee from '../components/Marquee.astro';
   </form>
 
   <Cta
-    href="/kontakt"
+    href="/om_os#kontakt"
     text="Kontakt"
   />
 </div>
 </div>
 
     <!-- BLIV MEDLEM -->
-    <div class="membership-box">
+    <div id="tilmeld"class="membership-box">
 
       <h2>Bliv Medlem</h2>
 
@@ -291,11 +292,18 @@ import Marquee from '../components/Marquee.astro';
   <details class="accordion-item">
 
     <summary>
-      Medlemsbetingelse 1
+      §1. Medlemskab
     </summary>
 
     <p>
-      Her skriver du den første medlemsbetingelse.
+       Dit medlemskab er personligt og kan derfor ikke overdrages til, deles med eller benyttes af andre. Ændringer i persondata som f.eks. navn, adresse, e-mail, telefonnummer, bankoplysninger mv. bedes du venligst oplyse til os ved enten at henvende dig i receptionen, når den er bemandet, eller sende en mail til rumblesports.bogholderi@gmail.com.
+
+
+Medlemskabet er bindende for begge parter indtil det opsiges af én af parterne, se § 7.
+
+Der er 6 måneders binding. 
+
+Rumble Sports anvender MyFightBook som medlemssystem.
     </p>
 
   </details>
@@ -303,11 +311,12 @@ import Marquee from '../components/Marquee.astro';
   <details class="accordion-item">
 
     <summary>
-      Medlemsbetingelse 2
+      §2. Betaling
     </summary>
 
     <p>
-      Her skriver du den anden medlemsbetingelse.
+       Når du melder dig ind, tilmelder du dit betalingskort.
+ Herefter bliver den månedlige ydelse automatisk trukket fra din konto. Du er ansvarlig for at betaling sker rettidigt. Ikke rettidig betaling sidestilles med misligholdelse af kontrakten. Du giver ved tilmelding via indmeldingsformularen samtykke til at Rumble Sports opbevarer dine stamoplysninger. Desuden giver du samtykke til, at der kan oprettes kontantoverførselsaftale, dvs. at den månedlige betaling trækkes automatisk fra dit betalingskort. Såfremt medlemsbetingelserne misligholdes ved eksempelvis manglende betaling, forbeholder Rumble Sports sig retten til at videregive dine personlige oplysninger til tredje part, der vil stå for inddrivelsen af beløbet.
     </p>
 
   </details>
@@ -315,15 +324,164 @@ import Marquee from '../components/Marquee.astro';
   <details class="accordion-item">
 
     <summary>
-      Medlemsbetingelse 3
+      §3. For sen betaling
     </summary>
 
     <p>
-      Her skriver du den tredje medlemsbetingelse.
+      Betales den løbende ydelse ikke til den aftalte tid, udsendes en rykkerskrivelse til dig og der opkræves et rykkergebyr efter gældende takst pt. kr. 100,00. Hvis du ikke betaler senest 10 hverdage efter den angivne forfaldsdato, forfalder alle ydelser for den resterende del af minimumsperioden til øjeblikkelig betaling. Dit medlemskab spærres indtil restancen er udlignet. Udelukkelsesperioden godskrives ikke af Rumble Sports.
     </p>
 
   </details>
 
+  <details class="accordion-item">
+
+    <summary>
+      §4. Varighed/Medlemskab
+    </summary>
+
+    <p>
+ Der tale om et løbende medlemskab, der fortsætter indtil det opsiges af en af parterne i henhold medlemsbetingelserne. Det ophører således ikke automatisk blot fordi betalingen ikke bliver gennemført.    </p>
+
+  </details>
+
+    <details class="accordion-item">
+
+    <summary>
+     §5. Indmeldelsesgebyr 
+    </summary>
+
+    <p>
+Det koster kr. 199 i indmeldelsesgebyr, som trækkes ved indmelding.    </p>
+
+  </details>
+
+    <details class="accordion-item">
+
+    <summary>
+      §6. Bero
+    </summary>
+
+    <p>
+ Det er ikke muligt at sætte sit medlemskab i bero. Hvis man skal rejse, læse i udlandet eller andet og ikke har mulighed for at støtte op om klubben mens man er bortrejst, må man sende en opsigelse, se § 7.    </p>
+ </details>
+      <details class="accordion-item">
+
+    <summary>
+      §7. Opsigelse
+    </summary>
+
+    <p>
+Opsigelsesfrist for medlemskabet er løbende måned + 30 dage, når der er gået 5 måneder efter aftalens indgåelse. Der er 6 måneders binding.  
+
+Opsigelsen skal ske via din profil på myfightbook. Opsigelsen skal være os i hænde senest den 23. i måneden.   </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §8. Ændringer i priser og medlemsvilkår
+    </summary>
+
+    <p>
+  Rumble Sports forbeholder sig ret til prisændringer. Sådanne vil blive varslet ved opslag i klubben og på klubbens hjemmeside senest 45 dage før prisændringerne træder i kraft.   </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §9. Vigtig informationer om Corona (og sygdom generelt)
+    </summary>
+
+    <p>
+ Ved disse symptomer skal man blive hjemme, og ikke komme til træning i klubben:
+
+Tør hoste, feber, ondt i halsen, hovedpine, muskelsmerter, vejrtrækningsbesvær.
+
+Selv ved milde symptomer, må man mistænke Corona.
+
+Hvis det konstateres, at der er et eller flere medlemmer i klubben, der er testes positiv for corona, så har Rumble Sports mulighed for at lukke klubben ned, samt kræve at alle medlemmer foreviser en negativ corona test før de lukkes ind i klubben igen.
+
+Har man haft symptomer på, som nævnt ovenfor, skal man blive væk fra træningen indtil man har været symptomfri i 48 timer.
+
+HELT GENERELT BLIVER MAN SELVFØLGELIG HJEMME, HVIS MAN FØLER SIG SYG.
+
+! Husk ! Ovenstående er for at sikre at alle kan føle sig trygge ved at komme til træning. 
+
+Overholder man ikke ovenstående retningslinjer er det bortvisningsgrund.    </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §10. Misligholdelse af medlemsbetingelserne
+    </summary>
+
+    <p>
+  Både medlemmer og gæster forpligter sig til at overholde de fastsatte betingelser for ophold og benyttelse af klubben, herunder overholdelse af ordensreglementet samt henvisninger fra instruktørerne. Mangel på dette udgør en væsentlig misligholdelse af medlemsbetingelserne. Såfremt et medlem optræder truende eller på anden måde generer andre medlemmer eller Rumble Sports’ ansatte, kan Rumble Sports uden varsel bortvise medlemmet, og medlemskabet ophører øjeblikkeligt. Dette gælder ligeledes ved grove overtrædelser af medlemsbetingelserne, såsom gentagende manglende betaling.   </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §11. Ændringer i hold m.v.
+    </summary>
+
+    <p>
+  Rumble Sports forbeholder sig ret til ændringer i åbningstider, holdplaner, holdtider, instruktører og udbud af hold ved opslag på Rumble Sports facebook side. Desuden kan Rumble Sports samme dag aflyse hold eller ændre instruktør/holdtype samme dag.   </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §12. Helbredstilstand og personskade
+    </summary>
+
+    <p>
+  Al træning sker på eget ansvar. Du er selv ansvarlig for at være i den helbredstilstand, der tillader deltagelse i aktiviteter hos Rumble Sports. Rumble Sports tager ikke ansvar for personskader på et medlem som følge af ulykker, forkert træning eller andre besøgendes handlinger eller mangelfulde handlinger. Der gives ikke garanti for vægttab.    </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §13. Værdigenstande
+    </summary>
+
+    <p>
+  Rumble Sports bærer ikke noget ansvar for tab på grund af tyveri eller tingskade, ej heller ved tyveri fra klubben.   </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §14. Personoplysninger 
+    </summary>
+
+    <p>
+  Ved indmeldelsen giver du lov til at Rumble Sports må behandle og opbevare oplysninger om dig.    </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §15. Lukkedage mv.
+    </summary>
+
+    <p>
+  Som medlem accepterer du ved din underskrift på indmeldelsen, at Rumble Sports kan holde lukket eller med nedsat åbningstid i forbindelse med arrangementer og helligdage. Sådanne lukkedage vil i god tid blive meddelt ved opslag klubben samt på Rumble Sports facebook side.   </p>
+
+  </details>
+    <details class="accordion-item">
+
+    <summary>
+      §16. Træning og ophold i klubben
+    </summary>
+
+    <p>
+  Rumble Sports er vores allesammens sted. Hjælp os med at holde det pænt og rent. Rumble Sports er også røgfrit område, både inde og ude. Al træning og ophold i Rumble Sports foregår på eget ansvar. Dette gælder såvel medlemmer som gæster, der opholder sig i Rumble Sports. Unge under 18 år samt umyndige må kun benytte Rumble Sports´ faciliteter, hvis Rumble Sports har modtaget en skriftlig tilladelse hertil fra pågældendes forældre eller værge. Børn under 15 år må ikke opholde sig i træningsområder uden en voksen. Under træning skal der altid anvendes tøj og evt. sko, der er beregnet til indendørs træning. Udstyr skal ryddes op efter endt træning.
+
+Rigtig god træning!     </p>
+
+  </details>
 </div>
 
   </div>
@@ -397,7 +555,7 @@ object-position: 60% center;
   .page-hero-content p {
     color: var(--clr-text);
 
-    max-width: 30ch;
+    max-width: 60ch;
   }
 
   .offers-section {

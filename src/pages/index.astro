@@ -47,11 +47,11 @@ import Marquee from '../components/Marquee.astro';
     </h1>
 
     <p>
-      MMA, Kickboxing & Brazilian Jiu-Jitsu for all levels.
+      Hos Rumble sports kan vi hjælpes ad med at opnå hinandens individuelle mål.Vi har fokus på respekt, udvikling og disciplin. <br>Alle er velkomne, så kom forbi og bliv en del af et stærkt fælleskab med ægte kerneværdier.
     </p>
 
     <Cta
-      href="/medlem"
+      href="/bliv_medlem"
       text="Tilmeld"
     />
 
@@ -64,7 +64,7 @@ import Marquee from '../components/Marquee.astro';
   <div class="container cta-grid">
 
     <!-- CARD 1 -->
-    <a href="/mma" class="cta-card">
+    <a href="/bliv_medlem" class="cta-card">
 
       <img src="/everyone_smiley_ENHANCED.png" alt="MMA Training">
 
@@ -75,7 +75,7 @@ import Marquee from '../components/Marquee.astro';
     </a>
 
     <!-- CARD 2 -->
-    <a href="/bjj" class="cta-card">
+    <a href="/om_os" class="cta-card">
 
       <img src="/rolig_enhanced.png" alt="BJJ Training">
 
@@ -86,7 +86,7 @@ import Marquee from '../components/Marquee.astro';
     </a>
 
     <!-- CARD 3 -->
-    <a href="/kickboxing" class="cta-card">
+    <a href="/om_os#kontakt" class="cta-card">
 
       <img src="/red_smile_enhanced.png" alt="Kickboxing Training">
 
@@ -120,12 +120,12 @@ import Marquee from '../components/Marquee.astro';
       <div class="trial-cta-wrapper">
 
         <Cta
-          href="/skema"
+          href="/bliv_medlem#skema"
           text="Se Skema"
         />
 
         <Cta
-          href="/kontakt"
+          href="/om_os#kontakt"
           text="Kontakt Os"
         />
 
@@ -145,17 +145,7 @@ import Marquee from '../components/Marquee.astro';
       <h2>Anmeldelser</h2>
 
       <!-- DESKTOP ARROWS -->
-      <div class="reviews-controls">
 
-        <button class="review-btn" id="prevBtn">
-          ←
-        </button>
-
-        <button class="review-btn" id="nextBtn">
-          →
-        </button>
-
-      </div>
     </div>
 
     <!-- CAROUSEL -->
@@ -167,7 +157,17 @@ import Marquee from '../components/Marquee.astro';
       <img src="/engelsk_anmeldelse.png" alt="Review">
 
     </div>
+      <div class="reviews-controls">
 
+        <button class="review-btn" id="prevBtn">
+          ←
+        </button>
+
+        <button class="review-btn" id="nextBtn">
+          →
+        </button>
+
+      </div>
   </div>
 
 </section>
@@ -212,8 +212,8 @@ import Marquee from '../components/Marquee.astro';
 
         <img src="/step1.svg" alt="Fællesskab">
 
-        <p>
-          Bliv en del af et stærkt fællesskab, hvor alle hjælper hinanden med at udvikle sig.
+        <p class="step1text">
+          Bliv en del af et team, der tager godt imod alle nye medlemmer, og som med glæde hjælper dig i gang i det tempo du er tilpas med.
         </p>
 
       </div>
@@ -223,8 +223,7 @@ import Marquee from '../components/Marquee.astro';
 
         <img src="/step2.svg" alt="Selvudvikling">
 
-        <p>
-          Uanset dit niveau hjælper vores trænere dig med at blive stærkere fysisk og mentalt.
+        <p>Vi går meget op i at udfordrer hinanden for at gøre os bedre. Vi forstår, at alle har deres egne individuelle mål og ambitioner, så vi matcher udfordringsniveauet i forhold til dine behov.
         </p>
 
       </div>
@@ -235,8 +234,7 @@ import Marquee from '../components/Marquee.astro';
         <img src="/step3.svg" alt="Kampsport">
 
         <p>
-          Træn MMA, BJJ og kickboxing i et motiverende miljø med plads til alle.
-        </p>
+Vi lover, at du kommer til at se en kæmpe forskel på din egen udvikling efter du er blevet en rigtig del af teamet. Det gælder både mental klarhed og fysisk performance.        </p>
 
       </div>
 
@@ -246,7 +244,7 @@ import Marquee from '../components/Marquee.astro';
     <div class="motivation-cta">
 
       <Cta
-        href="/kontakt"
+        href="/bliv_medlem"
         text="Start Din Rejse"
       />
 
@@ -339,7 +337,7 @@ import Marquee from '../components/Marquee.astro';
   .hero-content p {
     color: var(--clr-text);
 
-    max-width: 30ch;
+    max-width: 60ch;
 
     font-size: 1.1rem;
   }
@@ -514,102 +512,104 @@ import Marquee from '../components/Marquee.astro';
 
     margin-top: 1rem;
   }
+/* SECTION */
+.reviews-section {
+  padding-block: var(--space-xl);
+}
 
-  /* DESKTOP */
- 
-  .reviews-section {
-    padding-block: var(--space-xl);
-  }
+/* HEADER */
+.reviews-header {
+  display: flex;
+  justify-content: center;
 
-  .reviews-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin-bottom: 2rem;
+}
 
-    margin-bottom: 2rem;
-  }
+.reviews-header h2 {
+  color: var(--clr-text);
 
-  .reviews-header h2 {
-    color: var(--clr-text);
+  text-transform: uppercase;
 
-    text-transform: uppercase;
-  }
+  text-align: center;
+}
 
-  /* CONTROLS */
-  .reviews-controls {
-    display: none;
+/* CAROUSEL */
+.reviews-carousel {
+  display: flex;
 
-    gap: 1rem;
-  }
+  gap: 1.5rem;
 
-  .review-btn {
-    width: 50px;
-    height: 50px;
+  overflow-x: auto;
 
-    border: none;
-    border-radius: 999px;
+  scroll-behavior: smooth;
 
-    background-color: var(--clr-accent);
-    color: var(--clr-text);
+  scroll-snap-type: x mandatory;
 
-    font-size: 1.25rem;
-    font-weight: 700;
+  scrollbar-width: none;
+}
 
-    cursor: pointer;
+.reviews-carousel::-webkit-scrollbar {
+  display: none;
+}
 
-    transition: 0.3s ease;
-  }
-
-  .review-btn:hover {
-    background-color: var(--clr-text);
-    color: var(--clr-accent);
-
-    transform: translateY(-2px);
-  }
-
-  /* CAROUSEL */
-  .reviews-carousel {
-    display: flex;
-
-    gap: 1.5rem;
-
-    overflow-x: auto;
-
-    scroll-behavior: smooth;
-
-	scroll-snap-type: x mandatory;
-
-    scrollbar-width: none;
-  }
-
-  .reviews-carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  .reviews-carousel img {
-	min-width: 100%;
-     width: 100%;
+/* IMAGES */
+.reviews-carousel img {
+  min-width: 100%;
+  width: 100%;
 
   flex-shrink: 0;
 
   scroll-snap-align: center;
 
-    border-radius: var(--radius-md);
+  border-radius: var(--radius-md);
 
-    box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* CONTROLS */
+.reviews-controls {
+  display: flex;
+  justify-content: center;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.review-btn {
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: var(--clr-accent);
+  color: var(--clr-text);
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.review-btn:hover {
+  background-color: var(--clr-text);
+  color: var(--clr-accent);
+
+  transform: translateY(-2px);
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+
+  .reviews-carousel img {
+    min-width: 60%;
   }
 
-  /* DESKTOP */
-  @media (min-width: 768px) {
+}
 
-    .reviews-controls {
-      display: flex;
-    }
-
-    .reviews-carousel img {
-      width: 380px;
-    }
-  }
     .motivation-section {
     padding-block: var(--space-xl);
   }
@@ -678,6 +678,9 @@ import Marquee from '../components/Marquee.astro';
 
     .motivation-card img {
       max-width: 260px;
+    }
+    .step1text{
+      padding-top: 70px;
     }
   }
 </style>
