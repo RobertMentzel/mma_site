@@ -2,7 +2,7 @@
 
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
-const { pageClass = "" } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,16 +10,17 @@ const { pageClass = "" } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Rumble Sports - {title}</title>
 	</head>
 	<Header />
-	<body class={pageClass}>
+	<body >
 			  <div class="page-bg">
 
     <img src="/forside_bg.svg" alt="">
